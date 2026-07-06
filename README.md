@@ -1,4 +1,4 @@
-# Lab 01 – Enterprise Network Foundation
+#Enterprise Network Foundation
 
 ## Overview
 
@@ -54,31 +54,31 @@ This project establishes the foundation of a virtual enterprise network using Or
 
 ---
 
-# pfSense Configuration
+## pfSense Configuration
 
 The first step was configuring pfSense to act as the network gateway. The WAN interface was connected to the VirtualBox NAT network to provide internet access, while the LAN interface was configured with a static IP address of **192.168.1.1/24**. A DHCP scope of **192.168.1.100–192.168.1.200** was created to automatically assign addresses to client devices.
 
 
 <img width="624" height="415" alt="pfsense_Linux_config" src="https://github.com/user-attachments/assets/f01bc278-ba09-457f-8495-405984f2398b" />
-
+Figure 1. Image shows pfSense configured with a wan interface connected to the VirtualBox NAT Network and a LAN interface configured as 192.168.1.1/24.
 ---
 
-# Windows Server Configuration
+## Windows Server Configuration
 
 Windows Server 2022 was configured with a static IPv4 address outside of the DHCP scope to ensure a consistent address for future infrastructure services such as Active Directory and DNS.
 
 The server successfully established connectivity to the pfSense management interface.
 
 <img width="624" height="500" alt="Windows_server_ipconfig" src="https://github.com/user-attachments/assets/0aba4dae-a457-459e-8b4f-e4b66b2e1aa8" />
-
+Figure 2. Image shows Windows server ipconfig readout showing the device has a static IP address of 192.168.1.10/24 and is connected to the pfSense Gateway at 192.168.1.1. 
 ---
 
-# Windows 10 Client Configuration
+## Windows 10 Client Configuration
 
 The Windows 10 workstation was configured to obtain an IP address automatically through DHCP. After connecting to the internal network, the workstation successfully received an address from the pfSense DHCP server.
 
 <img width="624" height="443" alt="Windows_user_ipconfig" src="https://github.com/user-attachments/assets/b76a7b7b-4d06-4293-a307-2ec2ae86c818" />
-
+Firguire 3. Image shows Windows user device ipconfig readout showing the device has an IP address of 192.168.1.100 which is in thew DHCP range and automatically set by the pfSense router.
 
 ---
 
@@ -104,7 +104,6 @@ Although both Windows systems successfully communicated with pfSense, direct ICM
 
 This lab reinforced the importance of establishing a properly designed network before deploying enterprise services. Separating WAN and LAN traffic through pfSense, assigning static addresses to infrastructure devices, and using DHCP for client systems created a stable and scalable foundation for future expansion.
 
-The troubleshooting process also demonstrated the importance of considering both network-level and host-level firewalls when diagnosing connectivity issues.
 
 ---
 
