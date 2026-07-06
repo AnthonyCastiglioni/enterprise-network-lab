@@ -81,7 +81,7 @@ The Windows 10 workstation was configured to obtain an IP address automatically 
 
 <img width="624" height="443" alt="Windows_user_ipconfig" src="https://github.com/user-attachments/assets/b76a7b7b-4d06-4293-a307-2ec2ae86c818" />
 
-Figure 3. Windows 11 workstation successfully receiving a DHCP lease (192.168.1.100) from the pfSense DHCP server.
+Figure 3. Windows 10 workstation successfully receiving a DHCP lease (192.168.1.100) from the pfSense DHCP server.
 
 ---
 ## Validation
@@ -96,9 +96,6 @@ The following tasks were successfully completed:
 - Successfully obtained a DHCP lease on Windows 11
 - Verified management access to the pfSense web interface
 
-### Outstanding Issue
-
-Although both Windows systems successfully communicated with pfSense, direct ICMP communication between the Windows Server and Windows 11 workstation was unsuccessful due to Windows Defender Firewall blocking inbound ping requests. This issue will be resolved in a future lab by creating the appropriate firewall rules rather than disabling host-based security.
 
 ---
 
