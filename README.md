@@ -12,12 +12,13 @@ Create separate WAN and LAN networks
 Configure static and dynamic IPv4 addressing
 Verify network connectivity between all systems
 Document the environment using professional engineering practices
+
 Lab Environment
 Component	Purpose
 Oracle VirtualBox	Virtualization Platform
 pfSense	Firewall / Router
-Windows Server	Infrastructure Server
-Windows 10/11	Client Workstation
+Windows Server Infrastructure Server
+Windows 11	Client Workstation
 Network Topology
                  Internet
                      │
@@ -32,6 +33,7 @@ Network Topology
                │                     │
      Windows Server          Windows Client
       192.168.10.10             DHCP
+
 IP Addressing
 Device	IP Address	Role
 pfSense LAN	192.168.10.1	Default Gateway
@@ -47,6 +49,7 @@ IPv4
 DHCP
 NAT
 ICMP
+
 Skills Demonstrated
 Enterprise network design
 Virtual network configuration
