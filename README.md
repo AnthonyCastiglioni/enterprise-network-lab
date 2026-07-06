@@ -5,7 +5,7 @@ This project establishes the foundation of a virtual enterprise network that wil
 
 The environment consists of a pfSense firewall/router, a Windows Server, and a Windows client connected through separate WAN and LAN networks. This lab focuses on establishing reliable network connectivity, implementing an IP addressing scheme, and validating communication between systems.
 
-Objectives
+|Objectives|
 Design a basic enterprise network topology
 Configure pfSense as the network gateway and firewall
 Create separate WAN and LAN networks
@@ -13,13 +13,14 @@ Configure static and dynamic IPv4 addressing
 Verify network connectivity between all systems
 Document the environment using professional engineering practices
 
-Lab Environment
-Component	Purpose
+|Lab Environment|
+Component	Purpose:
 Oracle VirtualBox	Virtualization Platform
 pfSense	Firewall / Router
 Windows Server Infrastructure Server
 Windows 11	Client Workstation
-Network Topology
+
+|Network Topology|
                  Internet
                      │
               NAT Network (WAN)
@@ -34,12 +35,12 @@ Network Topology
      Windows Server          Windows Client
       192.168.10.10             DHCP
 
-IP Addressing
-Device	IP Address	Role
-pfSense LAN	192.168.10.1	Default Gateway
-Windows Server	192.168.10.10	Infrastructure Server
-Windows Client	DHCP	Client Workstation
-Technologies Used
+|IP Addressing|
+pfSense LAN	192.168.10.1	Default Gateway |
+Windows Server	192.168.10.10	Infrastructure Server|
+Windows Client	DHCP	Client Workstation|
+
+|Technologies Used|
 Oracle VirtualBox
 pfSense
 Windows Server
@@ -50,7 +51,7 @@ DHCP
 NAT
 ICMP
 
-Skills Demonstrated
+|Skills Demonstrated|
 Enterprise network design
 Virtual network configuration
 Static IP configuration
@@ -62,33 +63,30 @@ Infrastructure documentation
 Technical troubleshooting
 Validation
 
+
+
+|Validation included|
 Connectivity was verified by testing communication between all devices.
-
-Validation included:
-
 Successful communication between the Windows Server and pfSense
 Successful communication between the Windows Client and pfSense
 Successful communication between the Windows Client and Windows Server
 Internet connectivity verification
 DNS name resolution testing
-Documentation
 
+
+|Documentation|
 Project documentation includes:
-
 Network topology diagram
 IP addressing plan
 Configuration screenshots
 Connectivity test results
 Troubleshooting notes
-Lessons learned
-Lessons Learned
 
+|Lessons Learned|
 This lab reinforced the importance of proper network planning before deploying infrastructure. Separating WAN and LAN networks, assigning appropriate IP addresses, and validating connectivity created a solid foundation for future services such as Active Directory, DNS, DHCP, Group Policy, VLANs, VPNs, and network monitoring.
 
-Future Enhancements
-
+|Future Enhancements|
 This environment will be expanded in future labs to include:
-
 Active Directory Domain Services
 DNS
 DHCP
