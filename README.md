@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project establishes the foundation of a virtual enterprise network using Oracle VirtualBox, pfSense, Windows Server 2022, and Windows 11. The objective was to design, configure, and validate a small business network that will serve as the base infrastructure for future enterprise services including Active Directory, DNS, DHCP, Group Policy, VLANs, VPNs, and network monitoring.
+This project establishes the foundation of a virtual enterprise network using Oracle VirtualBox, pfSense, Windows Server 2022, and Windows 10. The objective was to design, configure, and validate a small business network that will serve as the base infrastructure for future enterprise services including Active Directory, DNS, DHCP, Group Policy, VLANs, VPNs, and network monitoring.
 
 ---
 
@@ -13,7 +13,7 @@ This project establishes the foundation of a virtual enterprise network using Or
 | Oracle VirtualBox | Virtualization Platform |
 | pfSense | Firewall / Router |
 | Windows Server 2022 | Infrastructure Server |
-| Windows 11 | Client Workstation |
+| Windows 10 | Client Workstation |
 
 ---
 
@@ -45,7 +45,7 @@ This project establishes the foundation of a virtual enterprise network using Or
 - Oracle VirtualBox
 - pfSense
 - Windows Server 2022
-- Windows 11
+- Windows 10
 - IPv4
 - TCP/IP
 - DHCP
