@@ -34,7 +34,7 @@ This project establishes the foundation of a virtual enterprise network using Or
                           │
           ┌───────────────┴───────────────┐
           │                               │
- Windows Server 2022             Windows 11 Client
+ Windows Server 2022             Windows 10 Client
   Static IP                      DHCP Client
 ```
 
