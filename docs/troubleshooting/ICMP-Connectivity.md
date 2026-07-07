@@ -18,12 +18,14 @@ During validation of network connectivity, the Windows Server (192.168.1.10/24) 
 5.	Located the inbound rule 'File and Printer Sharing (Echo Request - ICMPv4-In)'.
 6.	Enabled the ICMPv4 Echo Request rule.
 7.	Retested connectivity and confirmed successful ping responses.
-Root Cause
+
+## Root Cause
 The Windows Defender Firewall was blocking inbound ICMP Echo Requests. Although pfSense was routing traffic correctly, Windows would not respond to ping requests until the ICMPv4 inbound firewall rule was enabled.
-Resolution
+
+## Resolution
 After enabling the 'File and Printer Sharing (Echo Request - ICMPv4-In)' inbound rule, the Windows Server and Windows 10 client were able to successfully ping each other.
 
-# Evidence
+## Evidence
 
 <img width="624" height="509" alt="windows_user_firewall_rules" src="https://github.com/user-attachments/assets/c80b802d-c365-45f4-ac51-789f1c67c17a" />
 
