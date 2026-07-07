@@ -6,15 +6,15 @@ Objective: Identify and resolve why the Windows Server and Windows 10 client cou
 During validation of network connectivity, the Windows Server (192.168.1.10/24) and the Windows 10 client (DHCP address 192.168.1.100/24) were unable to ping one another despite being on the same subnet and using the same default gateway (192.168.1.1). Ping requests timed out.
 
 ## Environment
-•	Firewall/Router: pfSense
-•	Server: Windows Server (Static IP: 192.168.1.10/24)
-•	Client: Windows 10 (DHCP: 192.168.1.100/24)
+- **Firewall/Router:** pfSense
+- **Server:** Windows Server (Static IP: 192.168.1.10/24)
+- **Client:** Windows 10 (DHCP: 192.168.1.100/24)
 
 ## Troubleshooting Process
 1.	Verified IP addressing, subnet mask (/24), and default gateway on both systems.
 2.	Reviewed pfSense firewall logs for blocked traffic.
 3.	Verified the default LAN allow rule in pfSense and confirmed LAN traffic was permitted.
-4.	Investigated Windows Defender Firewall on the Windows systems.
+4.	Reviewed Windows Defender Firewall inbound rules.
 5.	Located the inbound rule 'File and Printer Sharing (Echo Request - ICMPv4-In)'.
 6.	Enabled the ICMPv4 Echo Request rule.
 7.	Retested connectivity and confirmed successful ping responses.
@@ -23,7 +23,16 @@ During validation of network connectivity, the Windows Server (192.168.1.10/24) 
 The Windows Defender Firewall was blocking inbound ICMP Echo Requests. Although pfSense was routing traffic correctly, Windows would not respond to ping requests until the ICMPv4 inbound firewall rule was enabled.
 
 ## Resolution
-After enabling the 'File and Printer Sharing (Echo Request - ICMPv4-In)' inbound rule, the Windows Server and Windows 10 client were able to successfully ping each other.
+Enabled the **File and Printer Sharing (Echo Request - ICMPv4-In)** inbound rule in Windows Defender Firewall.
+After enabling the rule, ICMP communication between the Windows Server and Windows 10 client was successfully restored without requiring any additional pfSense configuration changes.
+
+## Validation
+After enabling the Windows Firewall ICMP rule:
+
+- Windows Server successfully pinged the Windows 10 client.
+- Windows 10 client successfully pinged the Windows Server.
+- Both systems remained on the same subnet (`192.168.1.0/24`).
+- pfSense continued routing traffic without additional configuration changes.
 
 ## Evidence
 
@@ -41,3 +50,13 @@ pfSense Firewall → Rules → LAN showing the default Allow LAN rule.
 
 ## Lessons Learned
 Successful routing through pfSense does not guarantee end-to-end connectivity. Host-based firewalls must also permit the desired traffic. Verifying IP configuration, router rules, and host firewall settings in a logical order provides an efficient troubleshooting workflow.
+
+## Skills Demonstrated
+
+- Network troubleshooting
+- Windows Defender Firewall
+- pfSense administration
+- ICMP diagnostics
+- Static and DHCP addressing
+- Layer 3 connectivity validation
+- Root cause analysis
